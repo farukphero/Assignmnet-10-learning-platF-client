@@ -9,7 +9,8 @@ const Header = () => {
       <h1 className="text-6xl md:text-5xl lg:text-5xl md:w-2/3">
         <b>Best Online Education Expertise</b>
     </h1>
-    <button className="btn btn-active btn-info md:btn-ghost lg:btn-ghost mt-10">View Courses<ArrowSmallRightIcon className="h-6 w-6"/></button>
+    <p className="md:w-2/3 mt-3">Education is the passport to the future, for tomorrow belongs to those who prepare for it today.</p>
+    <button className="btn btn-active btn-info md:btn-ghost lg:btn-ghost mt-12 md:mt-6 lg:mt-10">View Courses<ArrowSmallRightIcon className="h-6 w-6"/></button>
     </div>
   );
 };
