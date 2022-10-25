@@ -10,7 +10,7 @@ const Courses = () => {
         .then( data=> setCourses(data))
     },[])
     return (
-        <div className='text-black'>
+        <div className='text-black grid grid-cols-1 md:grid-cols-2 gap-12 mt-11  ml-5 mr-5'>
             {
                 courses.map(course=> <Course key={course.id} course={course}></Course>)
             }
