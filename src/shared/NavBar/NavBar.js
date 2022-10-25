@@ -16,12 +16,6 @@ const NavBar = () => {
         }`}
       >
         <Link
-          className=" lg:mr-10 md:flex hover:bg-slate-400 p-3 rounded"
-          to="/home"
-        >
-          Home
-        </Link>
-        <Link
           className=" lg:mr-10  md:flex hover:bg-slate-400 p-3 rounded"
           to="/courses"
         >
@@ -38,6 +32,18 @@ const NavBar = () => {
           to="/faq"
         >
           FAQ
+        </Link>
+        <Link
+          className=" lg:mr-10 md:flex hover:bg-slate-400 p-3 rounded"
+          to="/login"
+        >
+          Login
+        </Link>
+        <Link
+          className=" lg:mr-10 md:flex hover:bg-slate-400 p-3 rounded"
+          to="/register"
+        >
+          Register
         </Link>
         <div className>
           <div className="form-control">

@@ -8,7 +8,7 @@ import './Main.css'
 const Main = () => {
     return (
         <div>
-            <div className="background-picture pt-0 lg:pt-12 lg:bg-fixed">
+            <div className="background-picture lg:bg-fixed">
             <NavBar></NavBar>
             </div>
            <div>

@@ -1,12 +1,12 @@
 import './App.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Main from './layout/Main';
-import Home from './shared/Home/Home';
 import Blog from './shared/Blog/Blog';
 import FAQ from './shared/FAQ/FAQ';
-import Theme from './shared/Theme/Theme';
 import Courses from './shared/Courses/Courses';
 import Header from './shared/Header/Header';
+import Login from './shared/Login/Login';
+import Register from './shared/Register/Register';
 
 function App() {
   const router = createBrowserRouter([
@@ -15,8 +15,8 @@ function App() {
       element: <Main></Main>,
       children: [
         {
-          path: "/home",
-          element: <Home></Home>,
+          path: "/",
+          element: <Header></Header>,
         },
         {
           path: "/courses",
@@ -31,8 +31,12 @@ function App() {
           element: <FAQ></FAQ>,
         },
         {
-          path: "/theme",
-          element: <Theme></Theme>,
+          path: "/login",
+          element: <Login></Login>,
+        },
+        {
+          path: "/register",
+          element: <Register></Register>,
         },
       ],
     },
@@ -40,7 +44,6 @@ function App() {
   return (
     <div className="text-white relative">
        <RouterProvider router={router} />
-       <Header></Header>
     </div>
   );
 }
