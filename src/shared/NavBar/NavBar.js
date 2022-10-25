@@ -6,7 +6,7 @@ import "./NavBar.css";
 const NavBar = () => {
   const [open, setOpen] = useState(false);
   return (
-    <div className="navbar-container bg-slate-400 rounded">
+    <div className="navbar-container bg-slate-400 rounded opacity-75">
       <Link to="/" className="text-3xl lg:text-4xl flex p-6">
       <BookOpenIcon className="h-10 w-10"/>Education<b>Buddies</b>
       </Link>
