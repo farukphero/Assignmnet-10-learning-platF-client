@@ -4,7 +4,7 @@ const Register = () => {
 
     
     return (
-        <div className="absolute top-16 left-0 md:left-52 lg:left-52">
+        <div className="absolute top-24 md:top-16 lg:top-16 left-0 md:left-52 lg:left-52">
         <div className="hero min-h-screen">
          <div className="hero-content flex-col">
            <div className="text-center lg:text-left">
