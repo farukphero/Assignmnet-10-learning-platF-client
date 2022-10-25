@@ -7,11 +7,11 @@ const NavBar = () => {
   const [open, setOpen] = useState(false);
   return (
     <div className="navbar-container bg-slate-400 rounded opacity-75">
-      <Link to="/" className="text-3xl lg:text-4xl flex p-6">
+      <Link to="/" className="text-3xl lg:text-4xl flex p-2">
       <BookOpenIcon className="h-10 w-10"/>Education<b>Buddies</b>
       </Link>
       <nav
-        className={` bg-slate-500 md:bg-slate-400 lg:bg-slate-400 text-center ml-0 grid grid-cols-3 md:flex lg:flex p-6 absolute md:static duration-500 ease-in ${
+        className={` bg-slate-500 md:bg-slate-400 lg:bg-slate-400 text-center ml-0 grid grid-cols-3 md:flex lg:flex p-2 absolute md:static duration-500 ease-in ${
           open ? "top-20" : "top-[-350px]"
         }`}
       >
