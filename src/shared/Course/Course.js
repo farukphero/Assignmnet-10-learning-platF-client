@@ -11,7 +11,7 @@ const Course = ({ course }) => {
         </figure>
         <div className="card-body">
           <h2 className="card-title">{title}</h2>
-          <p> {details.slice(0, 100)+'...'} <button className="btn btn-link"><Link to={`/coursedetails/${_id}`}>read more</Link></button> </p>
+          <p> {details.slice(0, 100)+'...'} <Link className="text-blue-800 hover:underline" to={`/coursedetails/${_id}`}>read more</Link></p>
           <div className="card-actions justify-end">
             <div className="badge badge-outline">Fashion</div>
             <div className="badge badge-outline">Products</div>

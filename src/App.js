@@ -8,6 +8,7 @@ import Header from './shared/Header/Header';
 import Login from './shared/Login/Login';
 import Register from './shared/Register/Register';
 import CourseDetails from './shared/CourseDetails/CourseDetails';
+import PrivateRoute from './routes/PrivateRoute';
 
 function App() {
   const router = createBrowserRouter([
@@ -21,7 +22,7 @@ function App() {
         },
         {
           path: "/courses",
-          element: <Courses></Courses>,
+          element: <PrivateRoute><Courses></Courses></PrivateRoute>,
         },
         {
           path: "/blog",
