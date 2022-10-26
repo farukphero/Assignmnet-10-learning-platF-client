@@ -2,19 +2,25 @@ import React from "react";
 import { useLoaderData } from "react-router-dom";
  
 
-const CourseDetails = (courses_id) => {
-   const singleCourse = useLoaderData(courses_id)
-   console.log(singleCourse)
-    
+const CourseDetails = () => {
+   const singleCourse = useLoaderData()
+ 
+  const {picture, title, details} =singleCourse 
   return (
-    <div>
-        {/* <p>jascb {singleCourse.length}</p> */}
-      {/* {singleCourse.map((course) => (
-        <SingleCourse
-    
-          SingleCourse={SingleCourse}
-        >{SingleCourse.name}</SingleCourse>
-      ))} */}
+    <div className="text-black">
+       <div className="card bg-base-100 shadow-xl">
+        <figure>
+          <img className="w-full lg:w-8/12 mt-0 md:mt-10 rounded md:h-96" src={picture} alt="" />
+        </figure>
+        <div className="card-body">
+          <h2 className="card-title">{title}</h2>
+          <p> {details} </p>
+          <div className="card-actions justify-end">
+          <button className="btn btn-active btn-accent">Premium</button>
+            <div className="badge badge-outline">Products</div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

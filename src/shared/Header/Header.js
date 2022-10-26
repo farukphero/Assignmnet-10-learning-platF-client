@@ -1,6 +1,7 @@
 import React from "react";
 import { ArrowSmallRightIcon } from "@heroicons/react/24/solid";
 import "./Header.css";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -13,10 +14,10 @@ const Header = () => {
         Education is the passport to the future, for tomorrow belongs to those
         who prepare for it today.
       </p>
-      <button className="btn btn-active btn-info md:btn-ghost lg:btn-ghost mt-12 md:mt-6 lg:mt-10">
-        View Courses
+      <Link to='/courses'> <button className="btn btn-active btn-info md:btn-ghost lg:btn-ghost mt-12 md:mt-6 lg:mt-10">
+       View Courses
         <ArrowSmallRightIcon className="h-6 w-6" />
-      </button>
+      </button></Link>
     </div>
   );
 };

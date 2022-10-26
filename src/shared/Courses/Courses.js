@@ -16,7 +16,7 @@ const Courses = () => {
             <div className='text-black grid grid-cols-3 gap-12 mt-11  ml-5 mr-5'>
             <div className='hidden md:block md:col-end-1 md:col-span-1'>
             {
-                courses.map(course=> <li key={course._id} ><Link to={`/coursedetails/${course.courses_id}`}>{course.name}</Link></li>)
+                courses.map(course=> <li key={course._id} ><Link to={`/coursedetails/${course._id}`}>{course.name}</Link></li>)
             }
             </div>
             <div className='col-start-1 col-span-3'>
