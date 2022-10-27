@@ -4,7 +4,6 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
 
 const Login = () => {
-  // const [user, setUser]= useState(null)
   const { accountSignIn } = useContext(AuthContext);
 
   const [error, setError] = useState("");
@@ -22,18 +21,16 @@ const Login = () => {
   const handleSignIn = (event) => {
     event.preventDefault();
     const form = event.target;
-    // console.log(form)
     const email = form.email.value;
-    // console.log(email)
     const password = form.password.value;
-    // console.log(password)
+ 
 
     accountSignIn(email, password)
       .then((result) => {
         const user = result.user;
         navigate(from, { replace: true });
         console.log(user);
-        // setUser(user)
+        
       })
       .catch((error) => {
         setError(error.message);
@@ -45,7 +42,6 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         navigate(from, { replace: true });
-        // setUser(user)
         console.log(user);
       })
       .catch((error) => {
@@ -58,7 +54,6 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         navigate(from, { replace: true });
-        // setUser(user)
         console.log(user);
       })
       .catch((error) => {

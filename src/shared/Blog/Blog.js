@@ -27,7 +27,7 @@ const Blog = () => {
       <div className="text-black mt-20">
         <div>
           <h1 className="text-3xl text-center bg-slate-400 p-4">
-            Why are you using firebase? and 
+            Why are you using firebase?
           </h1>
           <p className="bg-cyan-200 p-3">
             <b>

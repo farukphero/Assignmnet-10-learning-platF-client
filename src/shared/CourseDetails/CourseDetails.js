@@ -1,9 +1,7 @@
 import React from "react";
 import { Link, useLoaderData } from "react-router-dom";
-
 import Pdf from "react-to-pdf";
 
-// import "./styles.css";
 const ref = React.createRef();
 
 const CourseDetails = () => {
@@ -57,7 +55,7 @@ const CourseDetails = () => {
           </div>
           <div className="card-actions justify-end">
             <Link to={`/premiumpage/${_id}`}>
-              <button className="btn btn-active btn-accent">Get premium access</button>
+              <button className="btn btn-active btn-accent text-white">Get premium access</button>
             </Link>
             <Pdf targetRef={ref} filename="code-example.pdf" scale={0.5}>
         {({ toPdf }) => <button className="btn" onClick={toPdf}>Generate Pdf</button>}

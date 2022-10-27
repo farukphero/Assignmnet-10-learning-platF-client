@@ -16,7 +16,6 @@ const Register = () => {
     const email = form.email.value;
     const photoURL = form.photoURL.value;
     const password = form.password.value;
-    // const confirm = form.confirm.value
 
     if (password.length < 8) {
       setPasswordError("password should be 8 character");
@@ -31,13 +30,12 @@ const Register = () => {
         navigate("/");
         handleUpdateProfile(name, photoURL);
         console.log(user);
-        // setUser(user)
+  
       })
       .catch((error) => {
         setPasswordError(error.message);
       });
 
-    // console.log(photoURL,name,email,password,confirm)
   };
 
   const handleUpdateProfile = (name, photoURL) => {
@@ -103,18 +101,6 @@ const Register = () => {
                   required
                 />
               </div>
-              {/* <div className="form-control">
-                 <label className="label">
-                   <span className="label-text">Confirm Password</span>
-                 </label>
-                 <input
-                   type="password"
-                   name='confirm'
-                   placeholder="password"
-                   className="input input-bordered"
-                   required
-                 />
-               </div> */}
               <p className="text-red-500">{passwordError}</p>
               <div className="form-control">
                 <button className="btn btn-primary">Register</button>

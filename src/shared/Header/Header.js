@@ -1,6 +1,5 @@
 import React from "react";
 import { ArrowSmallRightIcon } from "@heroicons/react/24/solid";
-import "./Header.css";
 import { Link } from "react-router-dom";
 
 const Header = () => {

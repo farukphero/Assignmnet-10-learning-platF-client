@@ -47,12 +47,12 @@ function App() {
     {
       path: "/coursedetails/:courseId",
       element: <CourseDetails></CourseDetails>,
-      loader: ({params})=> fetch(`http://localhost:5000/coursedetails/${params.courseId}`)
+      loader: ({params})=> fetch(`https://learning-platform-server-wine.vercel.app/coursedetails/${params.courseId}`)
     },
     {
       path:"premiumpage/:courseId",
       element:<PrivateRoute><PremiumPage></PremiumPage></PrivateRoute>,
-      loader: ({params})=> fetch(`http://localhost:5000/coursedetails/${params.courseId}`)
+      loader: ({params})=> fetch(`https://learning-platform-server-wine.vercel.app/coursedetails/${params.courseId}`)
     },
     {
       path: "*",

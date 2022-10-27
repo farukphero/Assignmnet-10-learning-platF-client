@@ -4,7 +4,6 @@ import NavBar from '../shared/NavBar/NavBar';
 import './Main.css'
  
 
-
 const Main = () => {
     return (
         <div>

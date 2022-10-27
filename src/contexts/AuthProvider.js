@@ -27,8 +27,7 @@ const AuthProvider = ({ children }) => {
   const emailVerify = () => {
     setLoading(true)
     sendEmailVerification(auth.currentUser).then(() => {
-      // Email verification sent!
-      // ...
+       
     });
   };
 
@@ -65,7 +64,6 @@ const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      // console.log('dgjsxhndzaushnxdjs', currentUser)
       setUser(currentUser);
       setLoading(false)
     });

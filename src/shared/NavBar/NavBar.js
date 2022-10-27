@@ -23,14 +23,11 @@ const NavBar = () => {
         
         <div className="flex p-2 mt-1 md:text-xl">
           {
-            user ?
+            user &&
              <>
              <h1>{user?.displayName}</h1>
              </>
-            : 
-            <>
              
-            </>
           }
         
            {user?.photoURL ? <img title={user?.displayName} className="h-10 w-10 rounded-full ml-0 md:ml-2 mr-5 md:mr-0 mt-0" src={user?.photoURL} alt="" />:
@@ -45,19 +42,19 @@ const NavBar = () => {
         }`}
       >
         <Link
-          className="lg:mr-5  md:flex hover:bg-slate-400 p-3 rounded"
+          className="lg:mr-5  md:flex hover:bg-blue-200 hover:text-black p-3 rounded"
           to="/courses"
         >
           Courses
         </Link>
         <Link
-          className=" lg:mr-5   md:flex hover:bg-slate-400 p-3 rounded"
+          className=" lg:mr-5   md:flex hover:bg-blue-200 hover:text-black p-3 rounded"
           to="/blog"
         >
           Blog
         </Link>
         <Link
-          className=" lg:mr-5 md:mr-0  md:flex hover:bg-slate-400 p-3 rounded"
+          className=" lg:mr-5 md:mr-0  md:flex hover:bg-blue-200 hover:text-black p-3 rounded"
           to="/faq"
         >
           FAQ
@@ -69,16 +66,16 @@ const NavBar = () => {
           : 
           <>
            <Link
-          className=" lg:mr-5 md:flex hover:bg-slate-400 p-3 rounded"
+          className=" lg:mr-5 md:flex hover:bg-blue-200 hover:text-black p-3 rounded"
           to="/login"
         >
           Login
         </Link>
         <Link
-          className=" lg:mr-5 md:flex hover:bg-slate-400 p-3 rounded"
+          className=" lg:mr-5 md:flex hover:text-black  rounded"
           to="/register"
         >
-          Register
+         <button className="btn"> Register</button>
         </Link>
           </>
         }
