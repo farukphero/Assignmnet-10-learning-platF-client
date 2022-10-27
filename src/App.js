@@ -9,6 +9,7 @@ import Login from './shared/Login/Login';
 import Register from './shared/Register/Register';
 import CourseDetails from './shared/CourseDetails/CourseDetails';
 import PrivateRoute from './routes/PrivateRoute';
+import PremiumPage from './pages/PremiumPage/PremiumPage';
 
 function App() {
   const router = createBrowserRouter([
@@ -22,7 +23,7 @@ function App() {
         },
         {
           path: "/courses",
-          element: <PrivateRoute><Courses></Courses></PrivateRoute>,
+          element: <Courses></Courses> ,
         },
         {
           path: "/blog",
@@ -48,6 +49,10 @@ function App() {
       element: <CourseDetails></CourseDetails>,
       loader: ({params})=> fetch(`http://localhost:5000/coursedetails/${params.courseId}`)
     },
+    {
+      path:"premiumpage/:id",
+      element:<PrivateRoute><PremiumPage></PremiumPage></PrivateRoute>,
+    }
   ]);
   return (
     <div className="text-white relative">

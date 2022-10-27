@@ -1,13 +1,18 @@
 import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 import React, { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
 
 const Login = () => {
   // const [user, setUser]= useState(null)
   const { accountSignIn  } = useContext(AuthContext);
 
+  const [error, setError] = useState('')
+
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || '/'
 
   const { providerGoogleLogIn } = useContext(AuthContext);
   const { providerGitHubLogIn } = useContext(AuthContext);
@@ -17,22 +22,22 @@ const Login = () => {
   const handleSignIn = (event) => {
     event.preventDefault();
     const form = event.target;
-    console.log(form)
+    // console.log(form)
     const email = form.email.value;
-    console.log(email)
+    // console.log(email)
     const password = form.password.value;
-    console.log(password)
+    // console.log(password)
 
     accountSignIn(email, password)
       .then((result) => {
         const user = result.user;
+        navigate( from, {replace: true});
         console.log(user);
         // setUser(user)
-        navigate('/')
         
       })
       .catch((error) => {
-        console.log(error.message);
+        setError(error.message);
       });
   };
 
@@ -44,7 +49,7 @@ const Login = () => {
         console.log(user);
       })
       .catch((error) => {
-        console.log(error);
+        setError(error.message);
       });
   };
 
@@ -56,7 +61,7 @@ const Login = () => {
         console.log(user);
       })
       .catch((error) => {
-        console.log(error);
+        setError(error.message);
       });
   };
   return (
@@ -92,6 +97,7 @@ const Login = () => {
                   required
                 />
               </div>
+              <p>{error}</p>
               <div className="form-control">
                 <button className="btn btn-info">Login</button>
                 <button
@@ -110,7 +116,7 @@ const Login = () => {
               </div>
               <label className="label">
                 <p>
-                  New for learning{" "}
+                  New for learning
                   <small>
                     <Link to="/register">Create a new account</Link>
                   </small>

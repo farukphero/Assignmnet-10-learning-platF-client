@@ -7,6 +7,7 @@ import { AuthContext } from "../../contexts/AuthProvider";
 const NavBar = () => {
   const {user, logOut}= useContext(AuthContext)
   const [open, setOpen] = useState(false);
+  const [toggle, setToggle] = useState(false)
 
   const handleLogOut =()=>{
     logOut()
@@ -81,11 +82,19 @@ const NavBar = () => {
         </Link>
           </>
         }
+       {
+        toggle ? <span>dark</span>
+        
        
-        <div className>
+       : <span>light</span>
+    
+    
+ 
+       }
+        <div  onClick={() => setToggle(!toggle)}>
           <div className="form-control">
             <label className="label cursor-pointer">
-              <input type="checkbox" className="toggle" checked />
+              <input type="checkbox" className="toggle"/>
             </label>
           </div>
         </div>

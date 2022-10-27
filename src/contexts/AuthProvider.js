@@ -17,13 +17,15 @@ const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  //  const   [photo, setPhoto] = useState('')
+   const [loading, setLoading] = useState(true)
 
   const createUserByEmail = (email, password) => {
+    setLoading(true)
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
   const emailVerify = () => {
+    setLoading(true)
     sendEmailVerification(auth.currentUser).then(() => {
       // Email verification sent!
       // ...
@@ -31,14 +33,12 @@ const AuthProvider = ({ children }) => {
   };
 
   const accountSignIn = (email, password) => {
+    setLoading(true)
     return signInWithEmailAndPassword(auth, email, password);
   };
 
-  const updateName = () => {
-    return updateProfile(auth.currentUser, {
-      displayName: user,
-      // photoURL: "photo",
-    })
+  const updateName = (profile) => {
+    return updateProfile(auth.currentUser, profile)
       .then(() => {
         // Profile updated!
         // ...
@@ -49,14 +49,17 @@ const AuthProvider = ({ children }) => {
       });
   };
   const logOut = () => {
+    setLoading(true)
     return signOut(auth);
   };
 
   const providerGoogleLogIn = (provider) => {
+    setLoading(true)
     return signInWithPopup(auth, provider);
   };
 
   const providerGitHubLogIn = (provider) => {
+    setLoading(true)
     return signInWithRedirect(auth, provider);
   };
 
@@ -64,6 +67,7 @@ const AuthProvider = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       // console.log('dgjsxhndzaushnxdjs', currentUser)
       setUser(currentUser);
+      setLoading(false)
     });
     return () => {
       unsubscribe();
@@ -72,6 +76,7 @@ const AuthProvider = ({ children }) => {
 
   const authInfo = {
     user,
+    loading,
     createUserByEmail,
     providerGoogleLogIn,
     providerGitHubLogIn,

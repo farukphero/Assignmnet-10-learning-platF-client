@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
  
   
 const Register = () => {
   const navigate = useNavigate();
-  // const [passwordError, setPasswordError]=useState('')
+  const [passwordError, setPasswordError]=useState('')
   const { createUserByEmail,updateName,emailVerify } = useContext(AuthContext)
 
   const handleEmailPassword=(event)=>{
@@ -14,14 +14,14 @@ const Register = () => {
     const form =event.target
     const name = form.name.value
     const email = form.email.value
-    const photo = form.photoURL.value
+    const photoURL = form.photoURL.value
     const password = form.password.value
-    const confirm = form.confirm.value
+    // const confirm = form.confirm.value
 
-    // if(password.length < 8){
-    //   setPasswordError('password should be 8 character')
-    //   return
-    // }
+    if(password.length < 8){
+      setPasswordError('password should be 8 character')
+      return
+    }
      
     createUserByEmail(email,password)
     .then((result) => {
@@ -29,18 +29,25 @@ const Register = () => {
       emailVerify()
       updateName()
       navigate('/')
+      handleUpdateProfile(name, photoURL)
       console.log(user)
       // setUser(user)
     })
     .catch((error) => {
-       console.log(error.message);
+      setPasswordError(error.message);
     });
   
-    console.log(photo,name,email,password,confirm)
+    // console.log(photoURL,name,email,password,confirm)
   
   }
 
-    
+    const handleUpdateProfile=(name, photoURL)=>{
+      const profileName ={displayName: name,
+      photoURL: photoURL}
+      updateName(profileName)
+      .then(()=>{})
+      .catch((error)=>setPasswordError(error))
+    }
    
     return (
         <div className="absolute top-24 md:top-5 lg:top-14 left-0 md:left-40 lg:left-52">
@@ -98,7 +105,7 @@ const Register = () => {
                    required
                  />
                </div>
-               <div className="form-control">
+               {/* <div className="form-control">
                  <label className="label">
                    <span className="label-text">Confirm Password</span>
                  </label>
@@ -109,8 +116,8 @@ const Register = () => {
                    className="input input-bordered"
                    required
                  />
-               </div>
-               {/* <p>{passwordError}</p> */}
+               </div> */}
+               <p className='text-red-500'>{passwordError}</p>
                <div className="form-control">
                  <button className="btn btn-primary">Register</button>
                </div>
