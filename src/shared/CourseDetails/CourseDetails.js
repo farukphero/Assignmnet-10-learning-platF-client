@@ -1,13 +1,19 @@
 import React from "react";
 import { Link, useLoaderData } from "react-router-dom";
 
+import Pdf from "react-to-pdf";
+
+// import "./styles.css";
+const ref = React.createRef();
+
 const CourseDetails = () => {
   const singleCourse = useLoaderData();
 
   const { courses_id, picture, title, details } = singleCourse;
   return (
     <div className="text-black">
-      <div className="card bg-base-100 shadow-xl">
+      
+      <div ref={ref} className="card bg-base-100 shadow-xl">
         <figure>
           <img
             className="w-full lg:w-8/12 mt-0 md:mt-10 rounded md:h-96"
@@ -52,7 +58,9 @@ const CourseDetails = () => {
             <Link to={`/premiumpage/${courses_id}`}>
               <button className="btn btn-active btn-accent">Premium</button>
             </Link>
-            <div className="badge badge-outline">Products</div>
+            <Pdf targetRef={ref} filename="code-example.pdf" scale={0.5}>
+        {({ toPdf }) => <button className="btn" onClick={toPdf}>Generate Pdf</button>}
+      </Pdf>
           </div>
         </div>
       </div>

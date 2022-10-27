@@ -27,7 +27,7 @@ function App() {
         },
         {
           path: "/blog",
-          element: <Blog></Blog>,
+        element:<PrivateRoute> <Blog></Blog></PrivateRoute>,
         },
         {
           path: "/faq",

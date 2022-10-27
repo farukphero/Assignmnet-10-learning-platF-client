@@ -5,14 +5,14 @@ import { AuthContext } from "../../contexts/AuthProvider";
 
 const Login = () => {
   // const [user, setUser]= useState(null)
-  const { accountSignIn  } = useContext(AuthContext);
+  const { accountSignIn } = useContext(AuthContext);
 
-  const [error, setError] = useState('')
+  const [error, setError] = useState("");
 
   const navigate = useNavigate();
   const location = useLocation();
 
-  const from = location.state?.from?.pathname || '/'
+  const from = location.state?.from?.pathname || "/";
 
   const { providerGoogleLogIn } = useContext(AuthContext);
   const { providerGitHubLogIn } = useContext(AuthContext);
@@ -31,10 +31,9 @@ const Login = () => {
     accountSignIn(email, password)
       .then((result) => {
         const user = result.user;
-        navigate( from, {replace: true});
+        navigate(from, { replace: true });
         console.log(user);
         // setUser(user)
-        
       })
       .catch((error) => {
         setError(error.message);
@@ -45,6 +44,7 @@ const Login = () => {
     providerGoogleLogIn(googleProvider)
       .then((result) => {
         const user = result.user;
+        navigate(from, { replace: true });
         // setUser(user)
         console.log(user);
       })
@@ -57,6 +57,7 @@ const Login = () => {
     providerGitHubLogIn(gitProvider)
       .then((result) => {
         const user = result.user;
+        navigate(from, { replace: true });
         // setUser(user)
         console.log(user);
       })
@@ -104,7 +105,6 @@ const Login = () => {
                   onClick={handleGoogleSignIn}
                   className="btn btn-outline btn-accent mt-4"
                 >
-
                   Log in with google
                 </button>
                 <button
@@ -116,10 +116,13 @@ const Login = () => {
               </div>
               <label className="label">
                 <p>
-                  New for learning
-                  <small>
-                    <Link to="/register">Create a new account</Link>
-                  </small>
+                  Don't have an account?
+                  <Link
+                    className="text-blue-700 hover:underline"
+                    to="/register"
+                  >
+                    Register
+                  </Link>
                 </p>
               </label>
             </form>
