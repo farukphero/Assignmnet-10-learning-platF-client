@@ -2,7 +2,7 @@
 Education Buddies, a fully Responsive website with react router and use firebase for authentication.
 
 # Project live link
-https://peppy-choux-667f19.netlify.app
+https://learning-platform-d8701.web.app
 
 # Getting Started with Create React App
 
