@@ -98,7 +98,7 @@ const Login = () => {
                   required
                 />
               </div>
-              <p>{error}</p>
+              <p className="text-red-400">{error}</p>
               <div className="form-control">
                 <button className="btn btn-info">Login</button>
                 <button

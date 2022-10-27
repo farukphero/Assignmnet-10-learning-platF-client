@@ -50,9 +50,14 @@ function App() {
       loader: ({params})=> fetch(`http://localhost:5000/coursedetails/${params.courseId}`)
     },
     {
-      path:"premiumpage/:id",
+      path:"premiumpage/:courseId",
       element:<PrivateRoute><PremiumPage></PremiumPage></PrivateRoute>,
-    }
+      loader: ({params})=> fetch(`http://localhost:5000/coursedetails/${params.courseId}`)
+    },
+    {
+      path: "*",
+      element: <h1 className='text-2xl text-center text-blue-500'><b>404 Page Not Found</b> </h1>,
+    },
   ]);
   return (
     <div className="text-white relative">

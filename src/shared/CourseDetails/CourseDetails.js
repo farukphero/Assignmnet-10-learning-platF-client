@@ -9,11 +9,12 @@ const ref = React.createRef();
 const CourseDetails = () => {
   const singleCourse = useLoaderData();
 
-  const { courses_id, picture, title, details } = singleCourse;
+  const { _id, picture,name, title, details } = singleCourse;
   return (
     <div className="text-black">
       
       <div ref={ref} className="card bg-base-100 shadow-xl">
+        <h1 className="text-center md:text-4xl mt-4">Welcome to {name} page</h1>
         <figure>
           <img
             className="w-full lg:w-8/12 mt-0 md:mt-10 rounded md:h-96"
@@ -55,8 +56,8 @@ const CourseDetails = () => {
             </div>
           </div>
           <div className="card-actions justify-end">
-            <Link to={`/premiumpage/${courses_id}`}>
-              <button className="btn btn-active btn-accent">Premium</button>
+            <Link to={`/premiumpage/${_id}`}>
+              <button className="btn btn-active btn-accent">Get premium access</button>
             </Link>
             <Pdf targetRef={ref} filename="code-example.pdf" scale={0.5}>
         {({ toPdf }) => <button className="btn" onClick={toPdf}>Generate Pdf</button>}
