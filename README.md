@@ -15,6 +15,10 @@ Use firebase for authentication.
 # Back-end API
 
 Use Express.js for creating back-end api and load this front-end website.
+https://learning-platform-server-wine.vercel.app/courses
+
+# Dynamic course link
+https://learning-platform-server-wine.vercel.app/coursedetails/${id}
 
 # Icon 
 Use different icon from hero-icon.
