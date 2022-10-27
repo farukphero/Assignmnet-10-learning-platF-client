@@ -13,8 +13,8 @@ const Courses = () => {
     return (
         <div>
             <h1 className='absolute top-64 md:top-64 lg:top-64 left-0 lg:left-20 text-5xl'>Welcome to courses page.</h1>
-            <div className='text-black grid grid-cols-3 gap-12 mt-11  ml-5 mr-5'>
-            <div className='hidden md:block md:col-end-1 md:col-span-1'>
+            <div className='text-black flex gap-12 mt-11 ml-5 mr-5'>
+            <div className='md:col-end-1 md:col-span-1'>
             {
                 courses.map(course=> <li className='hover:underline hover:text-blue-600' key={course._id} ><Link to={`/coursedetails/${course._id}`}>{course.name}</Link></li>)
             }
