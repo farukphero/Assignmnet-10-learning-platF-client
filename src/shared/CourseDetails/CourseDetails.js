@@ -7,7 +7,8 @@ const ref = React.createRef();
 const CourseDetails = () => {
   const singleCourse = useLoaderData();
 
-  const { _id, picture,name, title, details } = singleCourse;
+  const { _id, picture,name, title, details, image,trainer } = singleCourse;
+
   return (
     <div className="text-black">
       
@@ -23,6 +24,10 @@ const CourseDetails = () => {
         <div className="card-body">
           <h2 className="card-title">{title}</h2>
           <p> {details} </p>
+          <div className="flex">
+          <img className="h-10 w-10 rounded-full" src={image} alt="" />
+          <h1 className="ml-3"><b>Trainer :</b> {trainer}</h1>
+          </div>
           <div>
             <div class="rating rating-xs">
               <input

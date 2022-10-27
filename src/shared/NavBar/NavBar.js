@@ -38,23 +38,23 @@ const NavBar = () => {
         </div>
       <nav
         className={` bg-slate-500 md:bg-slate-400 lg:bg-slate-400 text-center ml-0 grid grid-cols-3 md:flex lg:flex p-2 absolute md:static duration-500 ease-in ${
-          open ? "top-20" : "top-[-350px]"
+          open ? "top-14" : "top-[-350px]"
         }`}
       >
         <Link
-          className="lg:mr-5  md:flex hover:bg-blue-200 hover:text-black p-3 rounded"
+          className="lg:mr-5 md:flex hover:bg-blue-200 hover:text-black p-3 rounded"
           to="/courses"
         >
           Courses
         </Link>
         <Link
-          className=" lg:mr-5   md:flex hover:bg-blue-200 hover:text-black p-3 rounded"
+          className=" lg:mr-5 md:flex hover:bg-blue-200 hover:text-black p-3 rounded"
           to="/blog"
         >
           Blog
         </Link>
         <Link
-          className=" lg:mr-5 md:mr-0  md:flex hover:bg-blue-200 hover:text-black p-3 rounded"
+          className=" lg:mr-5 md:mr-0 md:flex hover:bg-blue-200 hover:text-black p-3 rounded"
           to="/faq"
         >
           FAQ
