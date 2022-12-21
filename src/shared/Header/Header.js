@@ -9,14 +9,16 @@ const Header = () => {
       <h1 className="text-6xl md:text-6xl lg:text-5xl md:w-11/12 lg:w-2/3">
         <b>Best Online Education Expertise</b>
       </h1>
-      <p className="md:w-2/3 mt-3 text-xl md:text-3xl lg:text-xl md:w-11/12 lg:w-2/3">
+      <p className="mt-3 text-xl md:text-3xl lg:text-xl md:w-11/12 lg:w-2/3">
         Education is the passport to the future, for tomorrow belongs to those
         who prepare for it today.
       </p>
-      <Link to='/courses'> <button className="btn btn-active btn-info md:btn-ghost lg:btn-ghost mt-12 md:mt-6 lg:mt-10">
-       View Courses
-        <ArrowSmallRightIcon className="h-6 w-6" />
-      </button></Link>
+      <Link to="/courses">
+        <button className="btn btn-active btn-info md:btn-ghost lg:btn-ghost mt-12 md:mt-6 lg:mt-10">
+          View Courses
+          <ArrowSmallRightIcon className="h-6 w-6" />
+        </button>
+      </Link>
     </div>
   );
 };
