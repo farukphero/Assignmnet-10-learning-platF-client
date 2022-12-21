@@ -1,10 +1,14 @@
 import React from "react";
 import { ArrowSmallRightIcon } from "@heroicons/react/24/solid";
 import { Link } from "react-router-dom";
+import About from "../About/About";
+import Contact from "../Contact/Contact";
 
 const Header = () => {
   return (
-    <div className="absolute top-64 md:top-64 lg:top-64 left-0 lg:left-20 whitespace-pre-wrap pl-3">
+    <section>
+
+<div className="absolute top-64 md:top-64 lg:top-64 left-0 lg:left-20 whitespace-pre-wrap pl-3">
       <h1> WELCOME TO EDUCATION BUDDIES</h1>
       <h1 className="text-6xl md:text-6xl lg:text-5xl md:w-11/12 lg:w-2/3">
         <b>Best Online Education Expertise</b>
@@ -20,6 +24,9 @@ const Header = () => {
         </button>
       </Link>
     </div>
+    <About></About>
+    <Contact></Contact>
+    </section>
   );
 };
 
